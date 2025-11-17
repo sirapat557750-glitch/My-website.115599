@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ร้านนวด | สบายกายสบายใจ</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="./assets/logo.png" alt="โลโก้ร้านนวด" class="logo" />
+        <div class="brand-text">
+          <strong>สบายกายสบายใจ</strong>
+          <span class="sub">ร้านนวดเพื่อสุขภาพ</span>
+        </div>
+      </div>
+      <button class="cta" id="quickBookBtn">จองด่วน</button>
+    </header>
+
+    <main id="view" class="view">
+      <!-- หน้าแรก -->
+      <section class="panel active" data-panel="home">
+        <div class="hero">
+          <img src="./assets/room.png" alt="ห้องนวดบรรยากาศอบอุ่น" />
+          <div class="hero-overlay">
+            <div class="hero-text">
+              ผ่อนคลายลึก ซ่อมแซมร่างกาย
+              <span class="badge">เปิดทุกวัน 10:00 - 22:00</span>
+            </div>
+            <div class="hero-actions">
+              <button class="btn primary" data-open="booking">จองคิว</button>
+              <button class="btn" data-open="services">ดูบริการ</button>
+            </div>
+          </div>
+        </div>
+        <div class="quick-grid">
+          <button class="card" data-service="thai">
+            <div class="card-title">นวดไทย</div>
+            <div class="card-sub">60/90/120 นาที</div>
+          </button>
+          <button class="card" data-service="oil">
+            <div class="card-title">นวดน้ำมัน</div>
+            <div class="card-sub">ผ่อนคลายทั้งตัว</div>
+          </button>
+          <button class="card" data-service="foot">
+            <div class="card-title">นวดเท้า</div>
+            <div class="card-sub">กระตุ้นการไหลเวียน</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- บริการ -->
+      <section class="panel" data-panel="services">
+        <div class="list">
+          <button class="list-item" data-service="thai">
+            <div>
+              <div class="list-title">นวดไทย</div>
+              <div class="list-desc">คลายจุดตึง ลึกเป็นพิเศษ</div>
+            </div>
+            <div class="price">฿400 / 60 นาที</div>
+          </button>
+          <button class="list-item" data-service="oil">
+            <div>
+              <div class="list-title">นวดน้ำมันอโรม่า</div>
+              <div class="list-desc">ผ่อนคลาย กลิ่นหอมละมุน</div>
+            </div>
+            <div class="price">฿650 / 90 นาที</div>
+          </button>
+          <button class="list-item" data-service="foot">
+            <div>
+              <div class="list-title">นวดเท้า รีเฟล็กซ์</div>
+              <div class="list-desc">สบายเบาเท้า หลับสบาย</div>
+            </div>
+            <div class="price">฿350 / 60 นาที</div>
+          </button>
+          <button class="list-item" data-service="shoulder">
+            <div>
+              <div class="list-title">คอ บ่า ไหล่</div>
+              <div class="list-desc">เหมาะคนทำงานหน้าคอม</div>
+            </div>
+            <div class="price">฿300 / 45 นาที</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- หมอนวด -->
+      <section class="panel" data-panel="therapists">
+        <div class="therapist-row">
+          <button class="therapist-card" data-therapist="aom">
+            <img src="./assets/therapist1.png" alt="หมออ้อม" />
+            <div class="t-name">อ้อม</div>
+            <div class="t-skill">นวดไทยลึก | คอ บ่า ไหล่</div>
+          </button>
+          <button class="therapist-card" data-therapist="mike">
+            <img src="./assets/therapist2.png" alt="หมอไมค์" />
+            <div class="t-name">ไมค์</div>
+            <div class="t-skill">น้ำมันอโรม่า | สปอร์ต</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- จองคิว -->
+      <section class="panel" data-panel="booking">
+        <form id="bookingForm" class="form">
+          <div class="field">
+            <label>บริการ</label>
+            <select name="service" required>
+              <option value="thai">นวดไทย</option>
+              <option value="oil">นวดน้ำมันอโรม่า</option>
+              <option value="foot">นวดเท้า</option>
+              <option value="shoulder">คอ บ่า ไหล่</option>
+            </select>
+          </div>
+          <div class="field two">
+            <div>
+              <label>วันที่</label>
+              <input type="date" name="date" required />
+            </div>
+            <div>
+              <label>เวลา</label>
+              <input type="time" name="time" required />
+            </div>
+          </div>
+          <div class="field">
+            <label>หมอนวด (ตัวเลือก)</label>
+            <select name="therapist">
+              <option value="">ไม่ระบุ</option>
+              <option value="aom">อ้อม</option>
+              <option value="mike">ไมค์</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>ชื่อ-เบอร์โทร</label>
+            <input type="text" name="name" placeholder="เช่น กานต์ 089-xxx-xxxx" required />
+          </div>
+          <button class="btn primary wide" type="submit">ยืนยันการจอง</button>
+        </form>
+      </section>
+
+      <!-- แกลเลอรี่ -->
+      <section class="panel" data-panel="gallery">
+        <div class="gallery-grid">
+          <img src="./assets/gallery1.png" alt="บรรยากาศร้าน" />
+          <img src="./assets/gallery2.png" alt="อุปกรณ์และน้ำมัน" />
+          <img src="./assets/gallery3.png" alt="มุมพักผ่อน" />
+        </div>
+      </section>
+
+      <!-- ติดต่อ -->
+      <section class="panel" data-panel="contact">
+        <div class="contact">
+          <div class="contact-row">
+            <div>
+              <div class="big">โทร</div>
+              <a class="link" href="tel:0890000000">089-000-0000</a>
+            </div>
+            <div>
+              <div class="big">LINE</div>
+              <a class="link" href="https://line.me/R/ti/p/@yourshop" target="_blank">@yourshop</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div>
+              <div class="big">ที่อยู่</div>
+              <span>ซอยสุขภาพ 9, บางกอก</span>
+            </div>
+            <div>
+              <div class="big">เวลาเปิด</div>
+              <span>ทุกวัน 10:00 - 22:00</span>
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn" id="openMapBtn">ดูแผนที่</button>
+            <button class="btn primary" data-open="booking">จองตอนนี้</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottomnav">
+      <button class="navbtn active" data-tab="home">
+        <span class="icon">🏠</span>
+        <span>หน้าแรก</span>
+      </button>
+      <button class="navbtn" data-tab="services">
+        <span class="icon">💆</span>
+        <span>บริการ</span>
+      </button>
+      <button class="navbtn" data-tab="therapists">
+        <span class="icon">🧑‍⚕️</span>
+        <span>หมอนวด</span>
+      </button>
+      <button class="navbtn" data-tab="booking">
+        <span class="icon">🗓️</span>
+        <span>จองคิว</span>
+      </button>
+      <button class="navbtn" data-tab="gallery">
+        <span class="icon">🖼️</span>
+        <span>แกลเลอรี่</span>
+      </button>
+      <button class="navbtn" data-tab="contact">
+        <span class="icon">📞</span>
+        <span>ติดต่อ</span>
+      </button>
+    </nav>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet" id="sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-content" id="sheetContent"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
